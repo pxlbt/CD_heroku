@@ -16,7 +16,7 @@ pipelines:
           script:
             - npm install
             - npm test
-            - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_STAGING.git master
+            # - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_STAGING.git master
             # When code is pushed to the master branch it is deployed automatically to the production environment.
     production:
       - step:
@@ -30,5 +30,6 @@ pipelines:
           script:
             - npm install
             - npm test
+            - git pull
             - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PROD.git master
 
