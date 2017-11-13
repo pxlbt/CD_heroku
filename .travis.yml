@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "7"
+install:
+  - npm install
+script:
+  - npm test
+
+deploy:
+  provider: script
+  script: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_STAGING.git master
+  on:
+    branch: master
