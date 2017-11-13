@@ -8,7 +8,8 @@ image: node:6.9.4
 clone:
    depth: full
 
-branches:
+pipelines: 
+  branches:
     # When code is pushed to the master branch it is deployed automatically to the staging environment.
     master:
       - step:
