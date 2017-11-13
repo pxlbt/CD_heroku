@@ -5,11 +5,14 @@
 # You can specify a custom docker image from Docker Hub as your build environment.
 image: node:6.9.4
 
-pipelines:
-  default:
-    - step:
-        caches:
-          - node
-        script: # Modify the commands below to build your repository.
-          - npm install
-          - npm test
+clone:
+   depth: full
+
+branches:
+    # When code is pushed to the master branch it is deployed automatically to the staging environment.
+    master:
+      - step:
+          script:
+            - npm install
+            - npm test
+            - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_STAGING.git master
