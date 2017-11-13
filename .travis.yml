@@ -4,5 +4,5 @@ node_js:
 install:
   - npm install
 script:
-  - echo $HEROKU_API_KEY
   - npm test
+  - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_STAGING.git master

@@ -8,8 +8,8 @@ var request = require("supertest").agent(server);
         done();
     });
 
-   it('displays "Hello World!"', function(done) {
+   it('displays what he should', function(done) {
      // The line below is the core test of our app.
-     request.get('/').expect('Hello World!!').end(done)
+     request.get('/').expect('I pass the Travis!!').end(done)
    });
  });
