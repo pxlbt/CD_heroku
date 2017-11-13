@@ -30,5 +30,5 @@ pipelines:
           script:
             - npm install
             - npm test
-            - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PROD.git master
+            - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PROD.git production:master
 
