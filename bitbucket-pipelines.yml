@@ -11,9 +11,9 @@ clone:
 pipelines: 
   branches:
     # When code is pushed to the master branch it is deployed automatically to the staging environment.
-    master:
-      - step:
-          script:
+    #master:
+     # - step:
+      #    script:
             #- npm install
             #- npm test
             # - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_STAGING.git master
@@ -30,8 +30,5 @@ pipelines:
           script:
             - npm install
             - npm test
-            - git config user.email "ebox.di@gmail.com"
-            - git config user.name "Dmitriy Ivanilov"
-            - git pull https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PROD.git master
-            - git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PROD.git master
+            - git push -f https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_PROD.git master
 
