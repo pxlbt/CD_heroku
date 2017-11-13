@@ -10,6 +10,6 @@ var request = require("supertest").agent(server);
 
    it('displays "Hello World!"', function(done) {
      // The line below is the core test of our app.
-     request.get('/').expect('Hello World!').end(done)
+     request.get('/').expect('Hello World!!').end(done)
    });
  });

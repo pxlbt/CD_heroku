@@ -4,5 +4,5 @@ node_js:
 install:
   - npm install
 script:
-  - echo $HEROKU_PROD
+  - echo $HEROKU_API_KEY
   - npm test
